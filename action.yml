@@ -22,6 +22,10 @@ runs:
 
         source ~/.bashrc
       shell: bash
+    - name: Get OPA status
+      id: status-opa
+      run: ./opa eval "1*2+3"
+      shell: bash
     - name: Bye
       run: echo "Goodbye!"
       shell: bash

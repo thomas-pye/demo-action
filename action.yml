@@ -4,12 +4,9 @@ runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v4
-    - name: Make the script files executable
-      run: chmod +x install-opa.sh
-      shell: bash
     - name: Setup OPA
       id: setup-opa
-      run: install-opa.sh
+      run: bash install-opa.sh
       shell: bash
     - name: Bye
       run: echo "Goodbye!"

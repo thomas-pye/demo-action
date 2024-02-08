@@ -3,12 +3,23 @@ description: 'Greet someone'
 runs:
   using: "composite"
   steps:
+    - uses: actions/checkout@v4
     - name: ls
       run: ls
       shell: bash
     - name: Setup OPA
       id: setup-opa
-      run: bash install-opa.sh
+      run: 
+        #!/usr/bin/bash
+
+        echo "installing OPA v0.61.0"
+
+        curl -L -o opa https://openpolicyagent.org/downloads/v0.61.0/opa_linux_amd64_static
+        chmod 755 opa
+
+        echo 'export PATH=$PATH:/opt/opa' >> ~/.bashrc
+
+        source ~/.bashrc
       shell: bash
     - name: Bye
       run: echo "Goodbye!"

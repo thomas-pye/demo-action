@@ -12,6 +12,9 @@ runs:
     - name: ls
       run: ls
       shell: bash
+    - name: ls2
+      run: ls ./.github
+      shell: bash
     - name: Setup OPA
       id: setup-opa
       run: 

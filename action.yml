@@ -3,7 +3,6 @@ description: 'Greet someone'
 runs:
   using: "composite"
   steps:
-    - uses: actions/checkout@v4
     - name: ls
       run: ls
       shell: bash

@@ -4,6 +4,9 @@ runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v4
+    - name: ls
+      run: ls
+      shell: bash
     - name: Setup OPA
       id: setup-opa
       run: bash install-opa.sh

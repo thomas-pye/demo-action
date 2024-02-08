@@ -5,11 +5,11 @@ runs:
   steps:
     - uses: actions/checkout@v4
     - name: Make the script files executable
-      run: chmod +x ${GITHUB_WORKSPACE}/scripts/install-opa.sh
+      run: chmod +x ./scripts/install-opa.sh
       shell: bash
     - name: Setup OPA
       id: setup-opa
-      run: ${GITHUB_WORKSPACE}/scripts/install-opa.sh
+      run: ./scripts/install-opa.sh
       shell: bash
     - name: Bye
       run: echo "Goodbye!"

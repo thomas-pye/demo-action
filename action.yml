@@ -21,7 +21,7 @@ runs:
 
     - name: Setup OPA
       id: random-number-generator
-      run: scripts/install-opa.sh
+      run: ./scripts/install-opa.sh
       shell: bash
 
     - name: Run goodbye.sh

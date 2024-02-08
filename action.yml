@@ -1,29 +1,15 @@
 name: 'Hello World'
 description: 'Greet someone'
-inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
-outputs:
-  random-number:
-    description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-number }}
 runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v4
-    - name: Set Greeting
-      run: echo "Hello $INPUT_WHO_TO_GREET."
-      shell: bash
-      env:
-        INPUT_WHO_TO_GREET: ${{ inputs.who-to-greet }}
-
+    - name: Make the script files executable
+        run: chmod +x ./scripts/install-opa.sh
     - name: Setup OPA
-      id: random-number-generator
+      id: setup-opa
       run: ./scripts/install-opa.sh
       shell: bash
-
-    - name: Run goodbye.sh
+    - name: Bye
       run: echo "Goodbye!"
       shell: bash

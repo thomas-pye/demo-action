@@ -5,7 +5,7 @@ runs:
   steps:
     - uses: actions/checkout@v4
     - name: Make the script files executable
-        run: chmod +x ./scripts/install-opa.sh
+      run: chmod +x ./scripts/install-opa.sh
     - name: Setup OPA
       id: setup-opa
       run: ./scripts/install-opa.sh

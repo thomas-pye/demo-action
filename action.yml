@@ -10,8 +10,6 @@ runs:
     - name: Setup OPA
       id: setup-opa
       run: 
-        #!/usr/bin/bash
-
         echo "installing OPA v0.61.0"
 
         curl -L -o opa https://openpolicyagent.org/downloads/v0.61.0/opa_linux_amd64_static
